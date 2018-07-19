@@ -1,0 +1,204 @@
+/* Navbar container */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Karla;
+    font-weight: 400;
+    font-size: 1rem;
+    background-color: darkgrey;
+    margin: 0;
+    display: block;
+}
+
+.EnergyIndustry,.AboutUs,.FESCHome{
+  margin: 1rem;
+}
+.ContactInfo{
+  color: blue;
+}
+
+#body-inner {
+    background-color: #white;
+    overflow-x: hidden;
+}
+
+div, header, main, nav, section {
+    display:block;
+
+}
+
+header#header .header-top{
+    background-color: #blue;
+
+}
+
+#header {
+    max-width: 80rem;
+    box-sizing: border-box;
+}
+
+#secondary-links {
+    float:right;
+    margin-right: .5em;
+    display:inline-block;
+}
+
+.block .content {
+    height: 100%;
+}
+
+ul.top-menu {
+    text-align:left;
+    display:inline-block;
+    overflow:hidden;
+    padding: .5rem;
+}
+
+ul {
+    margin:0;
+}
+
+ul.menu{
+    border: none;
+    list-style: none;
+    text-align:left;
+    display: inline-block;
+}
+
+li {
+    display:list-item;
+}
+
+
+ul li, ul li.leaf, ul li.expanded, li.socialicons {
+    color #292929;
+    font-size: 1rem;
+    font-weight:700;
+    list-style: none;
+    margin: 0 0 0 1.625rem;
+    padding: 0;
+    display: inline;
+}
+
+ul {
+    display:block;
+}
+
+a."icon-"{
+  font-family: FontAwesome;
+  font-weight: normal;
+  text-decoration:inherit;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content .header {
+    background: red;
+    padding: 16px;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    background-color: #ccc;
+    height: 550px;
+}
+
+.column a {
+    float: none;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.column a:hover {
+    background-color: #ddd;
+}
+
+.column33 {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+
+
+.column33 img {
+  margin-top: 8px;
+  vertical-align: middle;
+  max-height: 25rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        height: auto;
+    }
+}
