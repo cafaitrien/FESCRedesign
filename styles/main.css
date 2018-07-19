@@ -20,7 +20,7 @@ body {
 }
 
 #body-inner {
-    background-color: #white;
+    background-color: black;
     overflow-x: hidden;
 }
 
@@ -29,10 +29,9 @@ div, header, main, nav, section {
 
 }
 
-header#header .header-top{
-    background-color: #blue;
-
-}
+/* header#header .header-top{
+    background-color: blue;
+}  */
 
 #header {
     max-width: 80rem;
@@ -73,7 +72,7 @@ li {
 
 
 ul li, ul li.leaf, ul li.expanded, li.socialicons {
-    color #292929;
+    color: #292929;
     font-size: 1rem;
     font-weight:700;
     list-style: none;
@@ -84,12 +83,6 @@ ul li, ul li.leaf, ul li.expanded, li.socialicons {
 
 ul {
     display:block;
-}
-
-a."icon-"{
-  font-family: FontAwesome;
-  font-weight: normal;
-  text-decoration:inherit;
 }
 
 .navbar {
