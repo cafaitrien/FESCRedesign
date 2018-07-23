@@ -26,6 +26,8 @@ div, header, main, nav, section {
   display: block; }
 
 .headerImg {
+  float: left;
+  overflow: auto;
   background-color: white;
   display: inline-block;
   width: 10%; }

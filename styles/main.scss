@@ -33,6 +33,8 @@ div, header, main, nav, section {
 }
 
 .headerImg {
+    float:left;
+    overflow: auto;
     background-color: white;
     display: inline-block;
     width: 10%;
