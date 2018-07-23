@@ -12,22 +12,23 @@ body {
   display: block; }
 
 .EnergyIndustry, .AboutUs, .FESCHome {
-  margin: 1rem; }
+  margin: 1rem;
+  background-color: white; }
 
 .ContactInfo {
   color: blue; }
 
 #body-inner {
-  background-color: black;
+  background-color: #637eb6;
   overflow-x: hidden; }
 
 div, header, main, nav, section {
   display: block; }
 
-#header {
-  max-width: 80rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+.headerImg {
+  background-color: white;
+  display: inline-block;
+  width: 10%; }
 
 #secondary-links {
   float: right;
@@ -37,39 +38,9 @@ div, header, main, nav, section {
 .block .content {
   height: 100%; }
 
-ul.top-menu {
-  text-align: left;
-  display: inline-block;
-  overflow: hidden;
-  padding: .5rem; }
-
-ul {
-  margin: 0; }
-
-ul.menu {
-  border: none;
-  list-style: none;
-  text-align: left;
-  display: inline-block; }
-
-li {
-  display: list-item; }
-
-ul li, ul li.leaf, ul li.expanded, li.socialicons {
-  color: #292929;
-  font-size: 1rem;
-  font-weight: 700;
-  list-style: none;
-  margin: 0 0 0 1.625rem;
-  padding: 0;
-  display: inline; }
-
-ul {
-  display: block; }
-
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #637eb6;
   font-family: Arial, Helvetica, sans-serif; }
 
 .navbar a {
@@ -124,7 +95,7 @@ ul {
   height: 550px; }
   .column a {
     float: none;
-    color: black;
+    color: #637eb6;
     padding: 16px;
     text-decoration: none;
     display: block;
