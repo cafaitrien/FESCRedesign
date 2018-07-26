@@ -1,7 +1,7 @@
 /* Navbar container */
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0; }
 
 body {
   font-family: Karla;
@@ -12,46 +12,64 @@ body {
   display: block; }
 
 .EnergyIndustry, .AboutUs, .FESCHome {
-  margin: 1rem;
-  background-color: white; }
+  background-color: #cdc092;
+  padding: 1em; }
 
 .ContactInfo {
   color: blue; }
+  .ContactInfo iframe {
+    margin: 1em auto;
+    overflow: hidden;
+    border: 0; }
 
-#body-inner {
-  background-color: #637eb6;
-  overflow-x: hidden; }
+.FESCHome h4 {
+  text-align: center;
+  padding: 1rem; }
+
+.FESCHome iframe {
+  display: block;
+  margin: 0 auto; }
 
 div, header, main, nav, section {
   display: block; }
 
-.headerImg {
-  float: left;
-  overflow: auto;
-  background-color: white;
-  display: inline-block;
-  width: 10%; }
-
-#secondary-links {
-  float: right;
-  margin-right: .5em;
-  display: inline-block; }
-
 .block .content {
   height: 100%; }
+
+.getDirections {
+  white-space: nowrap;
+  text-align: center;
+  width: 325px;
+  padding: 6px 0; }
 
 .navbar {
   overflow: hidden;
   background-color: #637eb6;
-  font-family: Arial, Helvetica, sans-serif; }
-
-.navbar a {
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  display: block;
   float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none; }
+  margin: 0 1em 1em 1em;
+  position: relative;
+  z-index: 500; }
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    text-shadow: 0 4px 1px rgba(0, 0, 0, 0.5); }
+    .navbar a:hover {
+      margin-top: 2px; }
+  .navbar .headerImg {
+    padding-top: 7px;
+    float: left;
+    overflow: auto;
+    background-color: white;
+    display: inline-block;
+    width: 10%; }
 
 .dropdown {
   float: left;
@@ -65,10 +83,11 @@ div, header, main, nav, section {
   padding: 14px 16px;
   background-color: inherit;
   font: inherit;
-  margin: 0; }
+  margin: 0;
+  text-shadow: 0 4px 1px rgba(0, 0, 0, 0.5); }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red; }
+  background-color: #782F40; }
 
 .dropdown-content {
   display: none;
@@ -76,12 +95,11 @@ div, header, main, nav, section {
   background-color: #f9f9f9;
   width: 100%;
   left: 0;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1; }
 
 .dropdown-content .header {
-  background: red;
+  background: #782F40;
   padding: 16px;
   color: white; }
 
@@ -97,11 +115,13 @@ div, header, main, nav, section {
   height: 550px; }
   .column a {
     float: none;
-    color: #637eb6;
+    color: green;
+    font-weight: bold;
     padding: 16px;
     text-decoration: none;
     display: block;
-    text-align: left; }
+    text-align: left;
+    text-shadow: none; }
     .column a:hover {
       background-color: #ddd; }
 
@@ -112,14 +132,11 @@ div, header, main, nav, section {
   .column33 img {
     margin-top: 8px;
     vertical-align: middle;
-    max-height: 25rem; }
+    height: 204px; }
 
 .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 0 4px; }
 
 /* Clear floats after the columns */
@@ -133,5 +150,3 @@ div, header, main, nav, section {
   .column {
     width: 100%;
     height: auto; } }
-
-/*# sourceMappingURL=main.css.map */

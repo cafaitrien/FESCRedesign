@@ -1,8 +1,19 @@
+//TODO Figure out why paritals are not working
+
+//globals
+ @import "globals/color";
+// @import "globals/typography";
+//
+// //components
+// @import "components/header";
+// @import "components/footer";
+
 /* Navbar container */
-$backgroundcolor: white;
-$bannercolor: 	#637eb6;
+
+
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -15,16 +26,26 @@ body {
 }
 
 .EnergyIndustry,.AboutUs,.FESCHome{
-  margin: 1rem;
   background-color: $backgroundcolor;
-}
-.ContactInfo{
-  color: blue;
+  padding: 1em;
 }
 
-#body-inner {
-    background-color: $bannercolor;
-    overflow-x: hidden;
+.ContactInfo{
+  color: blue;
+  iframe{
+    margin: 1em auto;
+    overflow: hidden;
+    border: 0;
+  }
+}
+
+.FESCHome h4{
+  text-align: center;
+  padding: 1rem;
+}
+.FESCHome iframe{
+  display: block;
+  margin: 0 auto;
 }
 
 div, header, main, nav, section {
@@ -32,38 +53,61 @@ div, header, main, nav, section {
 
 }
 
-.headerImg {
-    float:left;
-    overflow: auto;
-    background-color: white;
-    display: inline-block;
-    width: 10%;
-}
+// .headerImg {
+//
+// }
 
-#secondary-links {
-    float:right;
-    margin-right: .5em;
-    display:inline-block;
-}
+// #secondary-links {
+//     float:right;
+//     margin-right: .5em;
+//     display:inline-block;
+// }
 
 .block .content {
     height: 100%;
 }
 
+.getDirections{
+  white-space: nowrap;
+  text-align: center;
+  width: 325px;
+  padding: 6px 0;
+}
 
 .navbar {
     overflow: hidden;
     background-color: $bannercolor;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.navbar a {
+    list-style: none;
+    display: block;
     float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    margin: 0 1em 1em 1em; //potentially set to 3em for ribbon
+    // height: 60px;
+    position: relative;
+    z-index: 500;
+
+    a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: block;
+      text-shadow: 0 4px 1px rgba(0,0,0,0.5);
+      &:hover {
+        margin-top: 2px;
+      }
+    }
+    .headerImg{
+      padding-top: 7px;
+      float:left;
+      overflow: auto;
+      background-color: white;
+      display: inline-block;
+      width: 10%;
+    }
+
 }
 
 .dropdown {
@@ -80,10 +124,11 @@ div, header, main, nav, section {
     background-color: inherit;
     font: inherit;
     margin: 0;
+    text-shadow: 0 4px 1px rgba(0,0,0,0.5);
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+  background-color: $accent;
 }
 
 .dropdown-content {
@@ -97,7 +142,7 @@ div, header, main, nav, section {
 }
 
 .dropdown-content .header {
-    background: red;
+    background: $accent;
     padding: 16px;
     color: white;
 }
@@ -116,11 +161,13 @@ div, header, main, nav, section {
 
   a {
     float: none;
-    color: $bannercolor;
+    color: green;//$bannercolor;
+    font-weight: bold;
     padding: 16px;
     text-decoration: none;
     display: block;
     text-align: left;
+    text-shadow: none;
     &:hover {
       background-color: #ddd;
     }
@@ -135,7 +182,9 @@ div, header, main, nav, section {
    img {
     margin-top: 8px;
     vertical-align: middle;
-    max-height: 25rem;
+    // max-height: 25rem;
+    height: 204px;
+    // width: 200px;
   }
 }
 
