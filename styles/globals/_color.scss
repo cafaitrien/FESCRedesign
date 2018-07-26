@@ -2,6 +2,7 @@ $backgroundcolor: #cdc092;//#fde6d2;
 //accent color is chosen as garnet (#782F40) for FSU
 $accent: #782F40;
 $bannercolor: 	#637eb6;
+$dropdowntextcolor: green;
 
 //let's do some mixing on the banner color
 @mixin mixed-color($alphaColor, $color, $backgroundcolor, $percent){

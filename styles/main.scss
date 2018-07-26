@@ -156,7 +156,7 @@ div, header, main, nav, section {
 
   a {
     float: none;
-    color: green;//$bannercolor;
+    color: $dropdowntextcolor;//$bannercolor;
     font-weight: bold;
     padding: 16px;
     text-decoration: none;
@@ -164,7 +164,7 @@ div, header, main, nav, section {
     text-align: left;
     text-shadow: none;
     &:hover {
-      background-color: #ddd;
+      background-color: $backgroundcolor;//#ddd;
     }
   }
 }
