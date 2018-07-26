@@ -49,9 +49,8 @@ div, header, main, nav, section {
   list-style: none;
   display: block;
   float: left;
-  margin: 0 1em 1em 1em;
-  position: relative;
-  z-index: 500; }
+  width: 98%;
+  margin: 0 1em 1em 1em; }
   .navbar a {
     float: left;
     font-size: 16px;

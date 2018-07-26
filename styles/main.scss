@@ -75,10 +75,11 @@ div, header, main, nav, section {
     list-style: none;
     display: block;
     float: left;
+    width: 98%;
     margin: 0 1em 1em 1em; //potentially set to 3em for ribbon
     // height: 60px;
-    position: relative;
-    z-index: 500;
+    // position: relative;
+    // z-index: 500;
 
     a {
       float: left;
