@@ -1,7 +1,6 @@
 /* Navbar container */
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 body {
   font-family: Karla;
@@ -76,8 +75,7 @@ div, header, main, nav, section {
   background-color: #f9f9f9;
   width: 100%;
   left: 0;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1; }
 
 .dropdown-content .header {
@@ -115,11 +113,8 @@ div, header, main, nav, section {
     max-height: 25rem; }
 
 .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 0 4px; }
 
 /* Clear floats after the columns */
@@ -133,5 +128,3 @@ div, header, main, nav, section {
   .column {
     width: 100%;
     height: auto; } }
-
-/*# sourceMappingURL=main.css.map */
