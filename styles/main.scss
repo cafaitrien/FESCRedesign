@@ -51,12 +51,6 @@ div, header, main, nav, section {
 
 }
 
-// #secondary-links {
-//     float:right;
-//     margin-right: .5em;
-//     display:inline-block;
-// }
-
 .block .content {
     height: 100%;
 }
@@ -68,17 +62,36 @@ div, header, main, nav, section {
   padding: 6px 0;
 }
 
+.headerImg{
+  // padding-top: 7px;
+  overflow: auto;
+  margin: 0 auto;
+  background-color: white;
+  display: block;
+  width: 50%;
+  // max-width: 521px;
+  height: auto;
+}
+.bannerimage{
+  overflow: hidden;
+  background-color: white;
+  list-style: none;
+  display: block;
+  width: 100%;
+  margin: 0 1em 0 0;
+}
+
 .navbar {
     overflow: hidden;
     background-color: $bannercolor;
     font-family: Arial, Helvetica, sans-serif;
     list-style: none;
     display: block;
-    float: left;
-    width: 98%;
-    margin: 0 1em 1em 1em; //potentially set to 3em for ribbon
+    // float: left;
+    width: 100%;
+    margin: 0 1em 0 0;//1em; //potentially set to 3em for ribbon
     // height: 60px;
-    // position: relative;
+    // position: relative;0
     // z-index: 500;
 
     a {
@@ -94,32 +107,61 @@ div, header, main, nav, section {
         margin-top: 2px;
       }
     }
-    .headerImg{
-      padding-top: 7px;
-      float:left;
-      overflow: auto;
-      background-color: white;
-      display: inline-block;
-      width: 10%;
-    }
+}
 
+.navbarLeft .icon{
+  display: none;
+}
+.navbarRight {
+  float: right;
+}
+.navbarCenter {
+  overflow: hidden;
+  background-color: $bannercolor;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  // float: left;
+  width: 100%;
+  margin: 0 1em 0 0;//1em; //potentially set to 3em for ribbon
+  // height: 60px;
+  // position: relative;0
+  // z-index: 500;
+
+
+  a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+    text-shadow: 0 4px 1px rgba(0,0,0,0.5);
+    &:hover {
+      margin-top: 2px;
+    }
+  }
+  display: none;
 }
 
 .dropdown {
     float: left;
     overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font: inherit;
-    margin: 0;
-    text-shadow: 0 4px 1px rgba(0,0,0,0.5);
+    .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font: inherit;
+      margin: 0;
+      text-shadow: 0 4px 1px rgba(0,0,0,0.5);
+    }
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
@@ -196,10 +238,61 @@ div, header, main, nav, section {
     clear: both;
 }
 
+
+@media screen and (max-width: 970px) {
+    .navbarRight {
+      display: none;
+    }
+    .navbarCenter{
+      display: flex;
+    }
+}
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .column {
+@media screen and (max-width: 725px) {
+  .column {
         width: 100%;
         height: auto;
     }
+}
+
+@media screen and (max-width: 725px) {
+  .navbarLeft a:not(:first-child), .navbarCenter, .dropdown .dropbtn {
+    display: none;
+  }
+  .navbarRight {
+    float: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .navbarLeft a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .navbarLeft.responsive {position: relative;}
+  .navbarLeft.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbarLeft.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .navbarLeft.responsive .dropdown {float: none;}
+  .navbarLeft.responsive .dropdown-content {position: relative;}
+  .navbarLeft.responsive .dropdown .dropbtn{
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+
 }
