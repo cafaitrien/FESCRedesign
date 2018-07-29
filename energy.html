@@ -16,14 +16,17 @@
     <title>Energy Economy - Florida Energy Systems Consortium</title>
     </head>
     <body>
-      <div class="navbar">
+      <header class="bannerimage">
         <img src="images/header_logo.png" alt="FESC logo" class="headerImg">
+      </header>
+      <div class="navbar" id="myNavbar">
+        <div class="navbarLeft" id="myNavbarLeft">
         <a href="index.html">Home</a>
         <a href="#research">Research</a>
         <a href="energy.html">Energy Economy</a>
         <div class="dropdown">
           <button class="dropbtn">Facilities
-            <i class="fa fa-caret-down"></i>
+            <!-- <i class="fa fa-caret-down"></i> -->
           </button>
           <div class="dropdown-content">
             <div class="row">
@@ -50,6 +53,29 @@
         </div>
         <a href="#education">Education</a>
         <a href="about.html">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        </div>
+        <div class="navbarRight">
+          <a href="https://www.facebook.com" class="socialicons">
+              <i class="fa fa-facebook" style="font-size:24px;color:white"></i>
+          </a>
+
+            <a href="https://www.twitter.com" class="socialicons">
+              <i class="fa fa-twitter" style="font-size:24px;color:white"></i>
+            </a>
+
+            <a href="https://www.youtube.com" class="socialicons">
+              <i class="fa fa-youtube" style="font-size:24px;color:white"></i>
+            </a>
+
+            <a href="https://www.instagram.com" class="socialicons">
+              <i class="fa fa-instagram" style="font-size:24px;color:white"></i>
+            </a>
+          </div>
+      </div>
+      <div class="navbarCenter">
         <a href="https://www.facebook.com" class="socialicons">
             <i class="fa fa-facebook" style="font-size:24px;color:white"></i>
         </a>
@@ -65,8 +91,7 @@
           <a href="https://www.instagram.com" class="socialicons">
             <i class="fa fa-instagram" style="font-size:24px;color:white"></i>
           </a>
-      </div>
-
+        </div>
 
       <article class="EnergyIndustry">
         <h2>A little about the Energy Economy</h2>
@@ -99,5 +124,6 @@
           </div>
         </div>
       </article>
+      <script src="scripts/scripts.js"></script>
     </body>
 </html>
