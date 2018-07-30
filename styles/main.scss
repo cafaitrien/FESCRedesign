@@ -23,6 +23,8 @@ body {
 }
 h1, h2 {
   font: $title-font;
+  text-align: left;
+  padding-bottom: 0.5em;
 }
 
 h3, h4, h5, h6 {
@@ -110,10 +112,15 @@ div, header, main, nav, section {
   }
 }
 
+.ContactInfo{
+  text-align: left;
+}
+
 .address{
   width: 33.33%;
   float: left;
-  padding-top: 2em;
+  padding-top: 1em;
+  line-height: 2rem;
 }
 
 .map-directions{

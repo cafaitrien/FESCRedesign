@@ -23,9 +23,16 @@
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 725px) {
-  .column,.column33,.address,.map-directions {
+  .column,.column33,.address,.map-directions,.getDirections {
         width: 100%;
         height: auto;
+    }
+    .AboutUs h2, .ContactInfo {
+      text-align: center;
+    }
+
+    .EnergyIndustry,.AboutUs,.FESCHome{
+      padding: 1em;
     }
 }
 
