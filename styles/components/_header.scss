@@ -17,3 +17,12 @@
   width: 100%;
   margin: 0 1em 0 0;
 }
+
+.intro-video-responsive {
+  background-color: $backgroundcolor;
+  padding: 1em 0 0 0;
+  iframe {
+    display: block;
+    margin: 0 auto;
+  }
+}
