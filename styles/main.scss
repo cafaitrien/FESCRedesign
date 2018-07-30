@@ -30,7 +30,6 @@ body {
 
 .ContactInfo{
   color: blue;
-  // display: flex;
   iframe{
     margin: 1em auto;
     overflow: hidden;
@@ -69,8 +68,8 @@ div, header, main, nav, section {
   margin: 0 auto;
   background-color: white;
   display: block;
-  width: 50%;
-  // max-width: 521px;
+  width: 33%;
+  // max-width: 1024px;
   height: auto;
 }
 .bannerimage{
@@ -87,7 +86,7 @@ div, header, main, nav, section {
     background-color: $bannercolor;
     font-family: Arial, Helvetica, sans-serif;
     list-style: none;
-    display: block;
+    //display: block;
     // float: left;
     width: 100%;
     margin: 0 1em 0 0;//1em; //potentially set to 3em for ribbon
@@ -233,10 +232,15 @@ div, header, main, nav, section {
     clear: both;
 }
 
-
 @media screen and (max-width: 970px) {
     .navbarRight {
       display: none;
+    }
+    .navbar {
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      display: flex;
     }
     .navbarCenter{
       display: flex;
@@ -265,6 +269,9 @@ div, header, main, nav, section {
 
   .navbarLeft a.icon {
     float: right;
+    display: block;
+  }
+  .navbar {
     display: block;
   }
 }
