@@ -1,7 +1,7 @@
 .navbar {
     overflow: hidden;
     background-color: $bannercolor;
-    font-family: Arial, Helvetica, sans-serif;
+    font: $nav-font;
     list-style: none;
     width: 100%;
     margin: 0 1em 0 0;//1em; //potentially set to 3em for ribbon
@@ -35,7 +35,7 @@
 .navbarCenter {
   overflow: hidden;
   background-color: $bannercolor;
-  font-family: Arial, Helvetica, sans-serif;
+  font: $nav-font;
   list-style: none;
   display: none;
   align-items: center;
@@ -76,7 +76,7 @@
     }
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover, .navbarCenter a:hover, .dropdown:hover .dropbtn {
   background-color: $accent;
 }
 
