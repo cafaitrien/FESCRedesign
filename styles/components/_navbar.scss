@@ -3,11 +3,9 @@
     background-color: $bannercolor;
     font-family: Arial, Helvetica, sans-serif;
     list-style: none;
-    //display: block;
-    // float: left;
     width: 100%;
     margin: 0 1em 0 0;//1em; //potentially set to 3em for ribbon
-    // height: 60px;
+    height: 46px;
     // position: relative;0
     // z-index: 500;
 
@@ -99,5 +97,5 @@
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+     display: block;
 }

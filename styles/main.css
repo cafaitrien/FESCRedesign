@@ -20,7 +20,8 @@
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
   width: 100%;
-  margin: 0 1em 0 0; }
+  margin: 0 1em 0 0;
+  height: 46px; }
   .navbar a {
     float: left;
     font-size: 16px;
@@ -216,7 +217,8 @@ div, header, main, nav, section {
     display: block; }
 
   .navbar {
-    display: block; } }
+    display: block;
+    height: auto; } }
 @media screen and (max-width: 725px) {
   .navbarLeft.responsive {
     position: relative; }
