@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Michael Cobb">
+  <meta name="viewport" content="width=device, initial-scale=1.0">
+
+  <!-- Imported fonts FONT AWESOME and GOOGLE FONTS, Amaranth and Roboto-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <!-- Style Sheets to be added-->
+  <link rel="stylesheet" href="styles/main.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <title>Energy Economy - Florida Energy Systems Consortium</title>
+</head>
+
+<body>
+  <header class="bannerimage">
+    <img src="images/header_logo.png" alt="FESC logo" class="headerImg">
+  </header>
+  <div class="navbar" id="myNavbar">
+    <div class="navbarLeft" id="myNavbarLeft">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="energy.html">Energy Economy</a>
+      <div class="dropdown">
+        <button class="dropbtn">Facilities
+            <!-- <i class="fa fa-caret-down"></i> -->
+          </button>
+        <div class="dropdown-content">
+          <div class="row">
+            <div class="column">
+              <h3>FESC Institutions</h3>
+              <a href="#">University of Central Florida</a>
+              <a href="#">University of Florida</a>
+              <a href="#">University of South Florida</a>
+            </div>
+            <div class="column">
+              <h3>FESC User Facilities</h3>
+              <a href="#">Florida Alantic University - Boca Raton, FL</a>
+              <a href="#">Florida International University - Miami, FL</a>
+              <a href="#">Florida State University – Tallahassee, FL</a>
+              <a href="#">Florida Solar Energy Center – Cocoa, FL</a>
+              <a href="#">University of Central Florida – Orlando, FL</a>
+              <a href="#">University of Florida – Gainesville, FL</a>
+              <a href="#">University of Florida – Perry, FL</a>
+              <a href="#">University of South Florida- Tampa, FL</a>
+              <a href="#">Florida Institute of Technology – Melbourne, FL</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#education">Education</a>
+      <a href="about.html">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="navbarRight">
+      <a href="https://www.facebook.com" class="socialicons">
+              <i class="fa fa-facebook" style="font-size:24px;color:white"></i>
+          </a>
+
+      <a href="https://www.twitter.com" class="socialicons">
+              <i class="fa fa-twitter" style="font-size:24px;color:white"></i>
+            </a>
+
+      <a href="https://www.youtube.com" class="socialicons">
+              <i class="fa fa-youtube" style="font-size:24px;color:white"></i>
+            </a>
+
+      <a href="https://www.instagram.com" class="socialicons">
+              <i class="fa fa-instagram" style="font-size:24px;color:white"></i>
+            </a>
+    </div>
+  </div>
+  <div class="navbarCenter">
+    <a href="https://www.facebook.com" class="socialicons">
+            <i class="fa fa-facebook" style="font-size:24px;color:white"></i>
+        </a>
+
+    <a href="https://www.twitter.com" class="socialicons">
+            <i class="fa fa-twitter" style="font-size:24px;color:white"></i>
+          </a>
+
+    <a href="https://www.youtube.com" class="socialicons">
+            <i class="fa fa-youtube" style="font-size:24px;color:white"></i>
+          </a>
+
+    <a href="https://www.instagram.com" class="socialicons">
+                <i class="fa fa-instagram" style="font-size:24px;color:white"></i>
+          </a>
+  </div>
+
+  <article class="Research">
+    <h2>Electricity total consumption (i.e. sold) Florida</h2>
+    <div id="TotalConsumptionChart"></div>
+    <p>
+      <br>
+      <a href="https://www.eia.gov/opendata/qb.php?sdid=SEDS.ESTCB.FL.A">Source: U.S. Energy Information Administration
+      </a>
+      <br>
+    </p>
+    <br><br>
+    <h2>Renewable energy production Florida</h2>
+    <div id="EnergyProductionChart"></div>
+    <p>
+      <br>
+      <a href="https://www.eia.gov/opendata/qb.php?sdid=SEDS.REPRB.FL.A">Source: U.S. Energy Information Administration
+      </a>
+      <br>
+    </p>
+  </article>
+  <script src="scripts/scripts.js"></script>
+  <script src="scripts/ResearchScripts.js"></script>
+</body>
+
+</html>

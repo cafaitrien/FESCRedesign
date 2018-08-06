@@ -125,7 +125,7 @@ h1, h2 {
 h3, h4, h5, h6 {
   font: 1.2rem "Lucinda Console", monospace; }
 
-.EnergyIndustry, .AboutUs, .FESCHome {
+.EnergyIndustry, .AboutUs, .FESCHome, .Research {
   background-color: #cdc092;
   padding: 3em;
   text-align: justify; }
@@ -136,6 +136,13 @@ h3, h4, h5, h6 {
     margin: 1em auto;
     overflow: hidden;
     border: 0; }
+
+.Research h2 {
+  text-align: center;
+  padding: 1rem; }
+
+.Research p {
+  text-align: center; }
 
 .FESCHome h4 {
   text-align: center;
