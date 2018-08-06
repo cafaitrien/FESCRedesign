@@ -10,11 +10,40 @@ The primary objective of the redesign is to make the website more user friendly 
 ## State of the Current Website
 The website uses two different navigation bars to direct you throughout the website. A top horizontal navigation bar directs you to a specific search area (e.g., Home, FESC Research, etc), while a vertical navigation bar on the right provides information related to the topic selected with the horizontal navigation bar. This style of navigation construction is confusing and not intuitive to the end user. For instance, as illustrated above, the user can click contact us in the upper righthand corner or the lower lefthand corner.  
 
-The content of the website itself, while informative is old and appears to be an “information dump” as opposed to a repository of information designed to educate the end user of the website.  For instance, under Solar, it would be helpful to first give a high level overview of solar power and then discuss current research projects – as opposed to jumping straight into completed research projects. The search bar at the top, while potentially useful needs a modern update, so that when you search, e.g., “David Norton”, the top entry is the contact card for David Norton, Interim Director and not an entry related to the 2017 FESC/Polytech conference.  
+The content of the website itself, while informative is old and appears to be an “information dump” as opposed to a repository of information designed to educate the end user of the website. For instance, under Solar, it would be helpful to first give a high level overview of solar power and then discuss current research projects – as opposed to jumping straight into completed research projects. The search bar at the top, while potentially useful needs a modern update, so that when you search, e.g., “David Norton”, the top entry is the contact card for David Norton, Interim Director and not an entry related to the 2017 FESC/Polytech conference.  
 
 Overall, the website has a lot of information, but is very frustrating to use.  The current theme does a disservice to the various stakeholders in the project – due to, for instance, not clearly and concisely discussing the subject matter, introducing the subject matter, maintaining consistency across the multiple tabs, etc.  In addition, the website is not responsive and doesn't appear to scale well across different devices.
 
 ### Accessibility Audit
+The web is fundamentally designed to work for people, whatever their hardware, software, language, location, or ability. Web accessibility means that websites, tools, and technologies are designed and developed so that **everyone** can use them. [Source W3C](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
+
+Evaluation Tools
+Website Accessibility Evaluation Tool is a tool to help web developers make their web content more accessible. Applying WAVE tool to the FESC site uncovered the following issues [full report](http://wave.webaim.org/report#/http://floridaenergy.ufl.edu/) the following observations.
+
+Style Issue Type | Why It Matters | How to Fix It
+-----------|-----------|-----------
+Error(3): Missing alternative text | Each image must have an alt attribute. Without alternative text, the content of an image will not be available to screen reader users or when the image is unavailable. | Add an alt attribute to the image. The attribute value should accurately and succinctly present the content and function of the image. If the content of the image is conveyed in the context or surroundings of the image, or if the image does not convey content or have a function, it should be given empty/null alternative text (alt="").
+
+Error (6): Linked image missing alternative text | Images that are the only thing within a link must have descriptive alternative text. If an image is within a link that contains no text and that image does not provide alternative text, a screen reader has no content to present to the user regarding the function of the link. | Add appropriate alternative text that presents the content of the image and/or the function of the link.
+
+Error (1): Missing form label | If a form control does not have a properly associated text label, the function or purpose of that form control may not be presented to screen reader users. Form labels also provide visible descriptions and larger clickable targets for form controls. | If a text label for a form control is visible, use the <label> element to associate it with its respective form control. If there is no visible label, either provide an associated label, add a descriptive title attribute to the form control, or reference the label(s) using aria-labelledby. Labels are not required for image, submit, reset, button, or hidden form controls.
+Error (1): Empty header | Some users, especially keyboard and screen reader users, often navigate by heading elements. An empty heading will present no information and may introduce confusion. | Ensure that all headings contain informative content.
+Error: Very low contrast | Adequate contrast is necessary for all users, especially users with low vision. | Increase the contrast between the foreground (text) color and the background color. Large text (larger than 18 point or 14 point bold) does not require as much contrast as smaller text.
+-----------|-----------|-----------
+Alert (1): Suspicious link | Links, which are often read out of context, should clearly describe the destination or function of the link. Ambiguous text, text that does not make sense out of context, and extraneous text (such as "click here") can cause confusion and should be avoided. | Where appropriate, reword the link text so that it is more descriptive of its destination when read out of context. Remove any extraneous text (such as "click here").
+Alert (4): Redundant link | When adjacent links go to the same location (such as a linked product image and an adjacent linked product name that go to the same product page) this results in additional navigation and repetition for keyboard and screen reader users. |If possible, combine the redundant links into one link and remove any redundant text or alternative text (for example, if a product image and product name are in the same link, the image can usually be given alt="").
+Alert (1): Link to PDF document | Unless authored with accessibility in mind, PDF documents often have accessibility issues. Additionally, PDF documents are typically viewed using a separate application or plug-in, and can thus cause confusion and navigation difficulties. | Ensure the PDF document is natively accessible. Additionally, inform the user that the link will open a PDF document. Because PDF documents may have limitations in accessibility (particularly for complex content) and require a separate program, HTML content should often be used in place of or in addition to the PDF document.
+Alert (1): Noscript element  | Content within <noscript> is presented if JavaScript is disabled. Because nearly all users (including users of screen readers and other assistive technologies) have JavaScript enabled, <noscript> cannot be used to provide an accessible version of inaccessible scripted content. | Ensure that scripted content is accessible. The <noscript> content will be presented to very few users, but must be accessible if used.
+
+
+### Mobile Friendliness
+
+### Performance
+
+### Functionality
+
+### Recommendations for Improvement
+
 
 ## Google Charts
 
