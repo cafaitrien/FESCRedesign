@@ -8,11 +8,14 @@ The Florida Energy Systems Consortium (FESC) was created by the Florida State go
 The primary objective of the redesign is to make the website more user friendly and responsive. The information on the website should be easy to locate, accessible and easy to digest on a variety of devices.  The information should be user centric such that the user can drill down into obtaining more and not overloaded with information at first.
 
 ## State of the Current Website
+### Ease of Use
 The website uses two different navigation bars to direct you throughout the website. A top horizontal navigation bar directs you to a specific search area (e.g., Home, FESC Research, etc), while a vertical navigation bar on the right provides information related to the topic selected with the horizontal navigation bar. This style of navigation construction is confusing and not intuitive to the end user. For instance, as illustrated above, the user can click contact us in the upper righthand corner or the lower lefthand corner.  
 
 The content of the website itself, while informative is old and appears to be an “information dump” as opposed to a repository of information designed to educate the end user of the website. For instance, under Solar, it would be helpful to first give a high level overview of solar power and then discuss current research projects – as opposed to jumping straight into completed research projects. The search bar at the top, while potentially useful needs a modern update, so that when you search, e.g., “David Norton”, the top entry is the contact card for David Norton, Interim Director and not an entry related to the 2017 FESC/Polytech conference.  
 
 Overall, the website has a lot of information, but is very frustrating to use.  The current theme does a disservice to the various stakeholders in the project – due to, for instance, not clearly and concisely discussing the subject matter, introducing the subject matter, maintaining consistency across the multiple tabs, etc.  In addition, the website is not responsive and doesn't appear to scale well across different devices.
+
+
 
 ### Accessibility Audit
 The web is fundamentally designed to work for people, whatever their hardware, software, language, location, or ability. Web accessibility means that websites, tools, and technologies are designed and developed so that **everyone** can use them. [Source W3C](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
@@ -42,17 +45,23 @@ The tool [SortSite by PowerMapper](https://www.powermapper.com/products/sortsite
 * alt text should not contain placeholders like 'picture' or 'spacer'.
 * Each element must contain text or an image with an alt attribute.
 * Img elements must have an alt attribute.
-* Ensure all information conveyed with color is also available without colorm for example from context or markup.
-* Identify row and column headers in data tables using TH elements and mark layout tables zith role = 'presentation'
-* Add a title attribute to each frame and iframe element. Without q title some screen readers read out the frame filename, which is often meaningless.
+* Ensure all information conveyed with color is also available without color, for example from context or markup.
+* Identify row and column headers in data tables using TH elements and mark layout tables with role = 'presentation'
+* Add a title attribute to each frame and iframe element. Without a title some screen readers read out the frame filename, which is often meaningless.
 * The form control has no label and no programmatically determined name.
 * Various pages have markup errors, which cause screen readers to miss content.
 
 ### Mobile Friendliness
-
+[Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=Y3qbjmWqZSvIyS-1oAUwUg) was used to test the mobile friendliness of the website.  The test revealed that the current site is **not** mobile friendly. 
+![Google Mobile Friendly Test](GoogleMobileFriendlyTest.png)
 ### Performance
 
 ### Functionality
+### Markup validation
+According to [W3C's HTML validator](https://validator.w3.org/check?uri=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&charset=%28detect+automatically%29&doctype=Inline&group=0), FESC page has 34 errors and 25 warnings.  
+
+The [CSS validator by W3C](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) found 1 error and 15 warnings in the css for the home page.
+
 
 ### Recommendations for Improvement
 
