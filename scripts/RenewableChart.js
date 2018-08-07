@@ -1,25 +1,12 @@
 //<!--Load the AJAX API-->
-// key = 2a4b1f1449829c4fe7ec230d3a3726b2
+// 2a4b1f1449829c4fe7ec230d3a3726b2
 //http://api.eia.gov/series/?api_key=YOUR_API_KEY_HERE&series_id=SEDS.TETCB.FL.A
 // Load the Visualization API and the corechart package.
+google.charts.load('current', {'packages': ['corechart']});
 
-function onDOMLoad(){
-  console.log("I'm the first stepm I should load Google Library");
-  google.charts.load('current', {'packages': ['corechart']});
-  // Set a callback to run when the Google Visualization API is loaded.
-  google.charts.setOnLoadCallback(getData);
-  // google.charts.setOnLoadCallback(drawTotalConsumptionChart);
-  google.charts.setOnLoadCallback(drawEnergyProductionChart);
-}
-document.addEventListener("DOMContentLoaded", onDOMLoad);
-
-function getData(){
-  console.log("Getting data is the third step!");
-  //Get the data here
-  drawTotalConsumptionChart();
-}
-
-
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawTotalConsumptionChart);
+google.charts.setOnLoadCallback(drawEnergyProductionChart);
 
 function drawTotalConsumptionChart() {
   // TODO load data from csv file or convert to google Sheets and load
