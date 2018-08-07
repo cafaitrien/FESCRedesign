@@ -15,8 +15,30 @@ document.addEventListener("DOMContentLoaded", onDOMLoad);
 
 function getData(){
   console.log("Getting data is the third step!");
-  //Get the data here
-  drawTotalConsumptionChart();
+  // Create a new request object
+  let request = new XMLHttpRequest()
+  let requestUrl = "http://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.REPRB.FL.A"
+// Open a connection
+  request.open('GET', requestUrl, true);
+  // Callback for when the request completes
+  request.onload = function(){
+    if(request.status !== 200){
+      console.log("Something went wrong: ", request);
+      return;
+    }
+
+      let response = JSON.parse(request.response);
+      console.log("response: ", response.series[0].data);
+      drawTotalConsumptionChart();
+    }
+
+    request.error = function(err){
+    console.log("error is: ", err);
+    return;
+    }
+    request.send();
+
+
 }
 
 
