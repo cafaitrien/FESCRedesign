@@ -52,8 +52,8 @@ The tool [SortSite by PowerMapper](https://www.powermapper.com/products/sortsite
 * Various pages have markup errors, which cause screen readers to miss content.
 
 ### Mobile Friendliness
-[Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=Y3qbjmWqZSvIyS-1oAUwUg) was used to test the mobile friendliness of the website.  The test revealed that the current site is **not** mobile friendly. 
-![Google Mobile Friendly Test](GoogleMobileFriendlyTest.png)
+[Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly?id=Y3qbjmWqZSvIyS-1oAUwUg) was used to test the mobile friendliness of the website.  The test revealed that the current site is **not** mobile friendly.
+![Google Mobile Friendly Test](SiteEvaluation/GoogleMobileFriendlyTest.png)
 ### Performance
 
 ### Functionality
