@@ -34,9 +34,19 @@ Alert (1): Link to PDF document | Unless authored with accessibility in mind, PD
 Alert (1): Noscript element  | Content within <noscript> is presented if JavaScript is disabled. Because nearly all users (including users of screen readers and other assistive technologies) have JavaScript enabled, <noscript> cannot be used to provide an accessible version of inaccessible scripted content. | Ensure that scripted content is accessible. The <noscript> content will be presented to very few users, but must be accessible if used.
 
 #### Color Blindness
-Color blindness results in a decreased ability to see color or differences in color. The [Color Filter](https://www.toptal.com/designers/colorfilter) tool from Toptal was used to evaluate different color blind anomalies.  As can be seen in the image, the website suffers from poor contrast under the condition Greyscale/achromatopsia.
+Color blindness results in a decreased ability to see color or differences in color. The [Color Filter](https://www.toptal.com/designers/colorfilter) tool from Toptal was used to evaluate different color blind anomalies.  As can be seen in the image below, the website suffers from poor contrast under the condition Greyscale/achromatopsia.
 ![landing page with greyscale/achromatopsia simulated](SiteEvaluation/ToptalColorBlind_Grey.png)
 
+#### PowerMapper
+The tool [SortSite by PowerMapper](https://www.powermapper.com/products/sortsite/checks/accessibility-checks/) finds pages that are unusable by people with disabilities. It checks entire websites against W3 WCAG accessibility standards and compliance with Section 508 of the Rehabilitation act. For accessibility, [SortSide](SiteEvaluation/Report_PowerMapper.pdf) found 8 issues on 6 pages including:
+* alt text should not contain placeholders like 'picture' or 'spacer'.
+* Each element must contain text or an image with an alt attribute.
+* Img elements must have an alt attribute.
+* Ensure all information conveyed with color is also available without colorm for example from context or markup.
+* Identify row and column headers in data tables using TH elements and mark layout tables zith role = 'presentation'
+* Add a title attribute to each frame and iframe element. Without q title some screen readers read out the frame filename, which is often meaningless.
+* The form control has no label and no programmatically determined name.
+* Various pages have markup errors, which cause screen readers to miss content.
 
 ### Mobile Friendliness
 
