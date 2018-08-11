@@ -154,6 +154,9 @@ div, header, main, nav, section {
 .block .content {
   height: 100%; }
 
+#CombinedChartHeader {
+  display: none; }
+
 .getDirections {
   white-space: nowrap;
   text-align: center;
