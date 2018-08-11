@@ -3,15 +3,16 @@
 //http://api.eia.gov/series/?api_key=YOUR_API_KEY_HERE&series_id=SEDS.TETCB.FL.A
 // Load the Visualization API and the corechart package.
 // naming temporary variables dog and cat
-let freshData = [];
 let consumptionData = [];
 let combinedData = [];
 let energyData = [];
+let relativePercentData = [];
 let requestUrl0 = "https://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.TETCB.FL.A";
 let requestUrl1 = "https://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.REPRB.FL.A"
 let dataEnergyObtained = 'false';
 let dataTotalObtained = 'false';
 let showCombined = 'false';
+let percentCalculated = 'false';
 
 function onDOMLoad() {
   google.charts.load('current', {
@@ -54,6 +55,7 @@ function drawTotalConsumptionChart() {
 
   var options = {
     height: 300,
+    chartArea: {left: '8%', width: '88%'},
     legend: {
       position: 'none'
     },
@@ -61,7 +63,7 @@ function drawTotalConsumptionChart() {
       format: '####',
       direction: -1,
       slantedText: false,
-      showTextEvery: 5
+      showTextEvery: 10
     },
     vAxis: {
       title: 'Billion Btu',
@@ -74,7 +76,6 @@ function drawTotalConsumptionChart() {
 
   if (dataTotalObtained == 'false') {
     getData(requestUrl0, function() {
-      freshData.push(this);
       data.addRows(this);
       var chart = new google.visualization.LineChart(document.getElementById('TotalConsumptionChart'));
       chart.draw(data, options);
@@ -110,6 +111,7 @@ function drawEnergyProductionChart() {
     legend: {
       position: 'none'
     },
+    chartArea: {left: '8%', width: '88%'},
     hAxis: {
       format: '####',
       direction: -1,
@@ -126,7 +128,6 @@ function drawEnergyProductionChart() {
   };
   if (dataEnergyObtained == 'false') {
     getData(requestUrl1, function() {
-      freshData.push(this);
       data.addRows(this);
       var chart = new google.visualization.AreaChart(document.getElementById('EnergyProductionChart'));
       chart.draw(data, options);
@@ -150,29 +151,44 @@ function drawEnergyProductionChart() {
 }
 
 function drawStackedChart() {
-  let combinedData = consumptionData;
-  for (let i = 0; i < energyData.length; i++) {
-    combinedData[i].push(energyData[i][1])
-  }
+
+    if (percentCalculated==='false'){
+      relativePercentData = energyData;
+      for (let i = 0; i < energyData.length; i++) {
+        relativePercentData[i][1] = 100*(energyData[i][1]/consumptionData[i][1]);
+      }
+      percentCalculated = 'true';
+    }
+
+    combinedData = consumptionData;
+    for (let i = 0; i < energyData.length; i++) {
+      combinedData[i].push(energyData[i][1]);
+    }
 
   var data = new google.visualization.DataTable();
+  var relativeData = new google.visualization.DataTable();
   data.addColumn('string', 'Year');
   data.addColumn('number', 'Total Electric Consumption (i.e. Sold) Florida');
   data.addColumn('number', 'Renewable Energy Production Florida')
   data.addRows(combinedData);
 
+  relativeData.addColumn('string', 'Year');
+  relativeData.addColumn('number', 'Percentage of renewable engergy produced to total electrical consumption');
+  relativeData.addRows(relativePercentData);
   var options = {
     // TODO: find a good color contrast that maintains theme of site
     // backgroundColor: '#cdc092',
     // colors: ['darkorange'],
+    title: 'Combined/stacked graph',
     isStacked: false,
     height: 300,
-    legend: {position: 'top', maxLines: 3},
+    legend: {position: 'bottom', maxLines: 3},
+    chartArea: {left: '10%', width: '88%'},
     hAxis: {
       format: '####',
       direction: -1,
       slantedText: false,
-      showTextEvery: 5
+      showTextEvery: 10
     },
     vAxis: {
       title: 'Billion Btu',
@@ -182,10 +198,31 @@ function drawStackedChart() {
       }
     }
   };
+  var options2 = {
+    title: 'Percentage of renewable energy produced to total electrical consumption in Florida',
+    height: 300,
+    legend: {position: 'bottom', maxLines: 4},
+    chartArea: {left: '10%', width: '88%'},
+    hAxis: {
+      format: '####',
+      direction: -1,
+      slantedText: false,
+      showTextEvery: 10
+    },
+    vAxis: {
+      title: 'Percent',
+      titleTextStyle: {
+        bold: 'true',
+        italic: 'false'
+      }
+    }
+  };
 
   var chart = new google.visualization.AreaChart(document.getElementById('CombinedChart'));
+  var chart2 = new google.visualization.AreaChart(document.getElementById('RelativePercent'));
 
   chart.draw(data, options);
+  chart2.draw(relativeData, options2)
 }
 
 $(window).resize(function() {

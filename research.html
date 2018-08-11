@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="robots" content="index,follow">
@@ -119,10 +118,15 @@
       <br>
     </p>
     <br><br>
-    <h2 id="CombinedChartHeader">Combined Chart Comparing Renewable Energy Production to the Total Electrical Consumption (i.e., sold) in Florida</h2>
-    <div id="CombinedChart"></div>
+    <!-- <div class="column50"> -->
+    <h2 id="CombinedChartHeader">Charts Comparing Renewable Energy Production to the Total Electrical Consumption (i.e., sold) in Florida</h2>
+    <div id="CombinedChart" class="column50"></div>
+    <!-- </div> -->
+    <div id="RelativePercent" class="column50">
+
+    </div>
     <br><br>
-    <input type="checkbox" id="chart-trigger" onclick="chartView(this.value)" value="Combined">Display charts combined</button>
+    <input type="checkbox" id="chart-trigger" onclick="chartView(this.value)" value="Combined">Display charts combined and percentage of renewable energy produced to total electrical consumption
     <br>
   </article>
 </body>
