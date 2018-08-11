@@ -157,7 +157,7 @@ function drawStackedChart() {
 
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Year');
-  data.addColumn('number', 'Electricity Total Consumption (i.e. Sold) Florida');
+  data.addColumn('number', 'Total Electric Consumption (i.e. Sold) Florida');
   data.addColumn('number', 'Renewable Energy Production Florida')
   data.addRows(combinedData);
 
