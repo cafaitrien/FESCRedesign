@@ -7,8 +7,8 @@ let freshData = [];
 let consumptionData = [];
 let combinedData = [];
 let energyData = [];
-let requestUrl0 = "http://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.TETCB.FL.A";
-let requestUrl1 = "http://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.REPRB.FL.A"
+let requestUrl0 = "https://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.TETCB.FL.A";
+let requestUrl1 = "https://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.REPRB.FL.A"
 let dataEnergyObtained = 'false';
 let dataTotalObtained = 'false';
 let showCombined = 'false';
