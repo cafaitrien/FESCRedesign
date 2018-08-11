@@ -50,9 +50,10 @@ function getData(requestUrl, callback) {
 function drawTotalConsumptionChart() {
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Year');
-  data.addColumn('number', 'Total Consumption Chart');
+  data.addColumn('number', 'Electricity Total Consumption (i.e. Sold) Floridat');
 
   var options = {
+    height: 300,
     legend: {
       position: 'none'
     },
@@ -80,33 +81,32 @@ function drawTotalConsumptionChart() {
       dataTotalObtained = 'true';
       if (consumptionData.length < 1) {
         consumptionData.push(this);
-        // combinedData.push(this);
         consumptionData = consumptionData[0];
-        // combinedData = combinedData[0];
       }
     });
   } else {
-    console.log("else", consumptionData[0].length)
-    if(consumptionData[0].length > 2){
-      for(let i=0;i<consumptionData.length;i++){
-        consumptionData[i].pop();
+      //error check to ensure that there are 2 columns
+      if (consumptionData[0].length > 2) {
+        for (let i = 0; i < consumptionData.length; i++) {
+          consumptionData[i].pop();
+        }
       }
+      data.addRows(consumptionData);
+      var chart = new google.visualization.LineChart(document.getElementById('TotalConsumptionChart'));
+      chart.draw(data, options);
     }
-    data.addRows(consumptionData);
-    var chart = new google.visualization.LineChart(document.getElementById('TotalConsumptionChart'));
-    chart.draw(data, options);
   }
-}
 
 function drawEnergyProductionChart() {
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Year');
-  data.addColumn('number', 'Total Consumption Chart');
+  data.addColumn('number', 'Renewable Energy Production Florida');
 
   var options = {
     // TODO: find a good color contrast that maintains theme of site
     // backgroundColor: '#cdc092',
     // colors: ['darkorange'],
+    height: 300,
     legend: {
       position: 'none'
     },
@@ -134,51 +134,40 @@ function drawEnergyProductionChart() {
       if (energyData.length < 1) {
         energyData.push(this);
         energyData = energyData[0];
-        // for(let i=0;i<energyData.length;i++){
-        //   combinedData[i].push(energyData[i][1])
-        // }
       }
     });
   } else {
-    console.log(energyData[0].length)
+    //error check to ensure that there are 2 columns
+    if (energyData[0].length > 2) {
+      for (let i = 0; i < energyData.length; i++) {
+        energyData[i].pop();
+      }
+    }
     data.addRows(energyData);
     var chart = new google.visualization.AreaChart(document.getElementById('EnergyProductionChart'));
     chart.draw(data, options);
   }
 }
 
-// function mergeData(data1, data2){
-//   let i = 0;
-//   while(i<57){
-//     data1[i].push(data2[i][1])
-//     i++;
-//   }
-// }
 function drawStackedChart() {
-  console.log("top stack chart", consumptionData[0].length)
-   let combinedData = consumptionData;
-  // let dog = freshData[1];
-  // combinedData = mergeData(combinedData,energyData)
-  console.log("after variables", consumptionData[0].length)
-  console.log("energy v: ", energyData[0].length)
-  // while(i<combinedData.length){
-   for (let i=0; i < energyData.length; i++) {
-     combinedData[i].push(energyData[i][1])
-   }
+  let combinedData = consumptionData;
+  for (let i = 0; i < energyData.length; i++) {
+    combinedData[i].push(energyData[i][1])
+  }
 
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Year');
-  data.addColumn('number', 'Total Consumption Chart');
-  data.addColumn('number', 'Energy Production Chart')
+  data.addColumn('number', 'Electricity Total Consumption (i.e. Sold) Florida');
+  data.addColumn('number', 'Renewable Energy Production Florida')
   data.addRows(combinedData);
 
   var options = {
     // TODO: find a good color contrast that maintains theme of site
     // backgroundColor: '#cdc092',
     // colors: ['darkorange'],
-    legend: {
-      position: 'none'
-    },
+    isStacked: false,
+    height: 300,
+    legend: {position: 'top', maxLines: 3},
     hAxis: {
       format: '####',
       direction: -1,
@@ -195,13 +184,11 @@ function drawStackedChart() {
   };
 
   var chart = new google.visualization.AreaChart(document.getElementById('CombinedChart'));
-console.log("after chart", consumptionData[0].length)
+
   chart.draw(data, options);
-  console.log("after chart draw", consumptionData[0].length)
 }
 
 $(window).resize(function() {
-  console.log("resizefunction", consumptionData[0].length)
   drawTotalConsumptionChart();
   drawEnergyProductionChart();
   if (showCombined === 'true') {
@@ -210,14 +197,12 @@ $(window).resize(function() {
 });
 
 function chartView() {
-  console.log("chart", consumptionData[0].length)
   let dog = document.getElementById("CombinedChart");
   let cat = document.getElementById("CombinedChartHeader");
   if (document.getElementById("chart-trigger").checked == true) {
     dog.style.display = "block"
     cat.style.display = "block"
     drawStackedChart();
-    console.log("after stack", consumptionData[0].length)
     showCombined = 'true';
   } else {
     dog.style.display = "none"
