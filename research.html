@@ -100,33 +100,33 @@
 
   <article class="Research">
     <!--TODO put charts in responsive columns 50% and write up a short blurb on each one -->
-    <h2>Electricity Total Consumption (i.e. Sold) Florida</h2>
+    <h2>Total Energy Consumption in Florida</h2>
     <div id="TotalConsumptionChart"></div>
     <p>
       <br>
-      <a href="https://www.eia.gov/opendata/qb.php?sdid=SEDS.ESTCB.FL.A">Source: U.S. Energy Information Administration
+      <a href="https://www.eia.gov/opendata/qb.php?category=40236&sdid=SEDS.TETCB.FL.A">Source: U.S. Energy Information Administration
       </a>
       <br>
     </p>
     <br><br>
-    <h2>Renewable Energy Production Florida</h2>
+    <h2>Renewable Energy Production in Florida</h2>
     <div id="EnergyProductionChart"></div>
     <p>
       <br>
-      <a href="https://www.eia.gov/opendata/qb.php?sdid=SEDS.REPRB.FL.A">Source: U.S. Energy Information Administration
+      <a href="https://www.eia.gov/opendata/qb.php?category=40426&sdid=SEDS.REPRB.FL.A">Source: U.S. Energy Information Administration
       </a>
       <br>
     </p>
     <br><br>
     <!-- <div class="column50"> -->
-    <h2 id="CombinedChartHeader">Charts Comparing Renewable Energy Production to the Total Electrical Consumption (i.e., sold) in Florida</h2>
+    <h2 id="CombinedChartHeader">Charts Comparing Renewable Energy Production to the Total Energy Consumption in Florida</h2>
     <div id="CombinedChart" class="column50"></div>
     <!-- </div> -->
     <div id="RelativePercent" class="column50">
 
     </div>
     <br><br>
-    <input type="checkbox" id="chart-trigger" onclick="chartView(this.value)" value="Combined">Display charts combined and percentage of renewable energy produced to total electrical consumption
+    <input type="checkbox" id="chart-trigger" onclick="chartView()">Display charts combined and percentage of renewable energy produced to total electrical consumption
     <br>
   </article>
 </body>

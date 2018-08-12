@@ -4,11 +4,11 @@
 // Load the Visualization API and the corechart package.
 // naming temporary variables dog and cat
 let consumptionData = [];
-let combinedData = [];
 let energyData = [];
-let relativePercentData = [];
 let requestUrl0 = "https://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.TETCB.FL.A";
-let requestUrl1 = "https://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.REPRB.FL.A"
+let requestUrl1 = "https://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.REPRB.FL.A";
+// Not used, but this is the link to the previous hardcoded data
+// let requestUrl2 = "http://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3a3726b2&series_id=SEDS.ESTCB.FL.A"
 let dataEnergyObtained = 'false';
 let dataTotalObtained = 'false';
 let showCombined = 'false';
@@ -51,11 +51,11 @@ function getData(requestUrl, callback) {
 function drawTotalConsumptionChart() {
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Year');
-  data.addColumn('number', 'Electricity Total Consumption (i.e. Sold) Floridat');
+  data.addColumn('number', 'Total Energy Consumption in Floridat');
 
   var options = {
     height: 300,
-    chartArea: {left: '8%', width: '88%'},
+    // chartArea: {left: '10%', width: '80%'},
     legend: {
       position: 'none'
     },
@@ -73,7 +73,6 @@ function drawTotalConsumptionChart() {
       },
     }
   };
-
   if (dataTotalObtained == 'false') {
     getData(requestUrl0, function() {
       data.addRows(this);
@@ -86,12 +85,6 @@ function drawTotalConsumptionChart() {
       }
     });
   } else {
-      //error check to ensure that there are 2 columns
-      if (consumptionData[0].length > 2) {
-        for (let i = 0; i < consumptionData.length; i++) {
-          consumptionData[i].pop();
-        }
-      }
       data.addRows(consumptionData);
       var chart = new google.visualization.LineChart(document.getElementById('TotalConsumptionChart'));
       chart.draw(data, options);
@@ -111,7 +104,7 @@ function drawEnergyProductionChart() {
     legend: {
       position: 'none'
     },
-    chartArea: {left: '8%', width: '88%'},
+    // chartArea: {left: '8%', width: '88%'},
     hAxis: {
       format: '####',
       direction: -1,
@@ -138,45 +131,32 @@ function drawEnergyProductionChart() {
       }
     });
   } else {
-    //error check to ensure that there are 2 columns
-    if (energyData[0].length > 2) {
-      for (let i = 0; i < energyData.length; i++) {
-        energyData[i].pop();
-      }
-    }
     data.addRows(energyData);
     var chart = new google.visualization.AreaChart(document.getElementById('EnergyProductionChart'));
     chart.draw(data, options);
   }
 }
 
-function computePercentageData(Cdata, Edata) {
-  let pData = Edata;
-  for (let i = 0; i < Edata.length; i++) {
-    pData[i][1] = 100*(Edata[i][1]/Cdata[i][1]);
-  }
-  return pData;
-}
 function drawStackedChart() {
-    if (percentCalculated==='false'){
-      relativePercentData = computePercentageData(consumptionData, energyData);
-      percentCalculated = 'true';
-    }
-
-    combinedData = consumptionData;
-    for (let i = 0; i < energyData.length; i++) {
-      combinedData[i].push(energyData[i][1]);
-    }
-
+  let relativePercentData = [];
+  let combinedData = [];
+  for(let i=0; i<consumptionData.length; i++){
+    combinedData[i] = consumptionData[i].slice();
+    relativePercentData[i] = energyData[i].slice();
+  }
+  for (let i = 0; i < energyData.length; i++) {
+    combinedData[i].push(energyData[i][1]);
+    relativePercentData[i][1] = 100*(energyData[i][1]/consumptionData[i][1]);
+  }
   var data = new google.visualization.DataTable();
   var relativeData = new google.visualization.DataTable();
   data.addColumn('string', 'Year');
-  data.addColumn('number', 'Total Electric Consumption (i.e. Sold) Florida');
+  data.addColumn('number', 'Total Energy Consumption in Florida');
   data.addColumn('number', 'Renewable Energy Production Florida')
   data.addRows(combinedData);
 
   relativeData.addColumn('string', 'Year');
-  relativeData.addColumn('number', 'Percentage of renewable engergy produced to total electrical consumption');
+  relativeData.addColumn('number', 'Percentage of renewable energy produced to total energy consumption');
   relativeData.addRows(relativePercentData);
   var options = {
     // TODO: find a good color contrast that maintains theme of site
@@ -186,7 +166,7 @@ function drawStackedChart() {
     isStacked: false,
     height: 300,
     legend: {position: 'bottom', maxLines: 3},
-    chartArea: {left: '10%', width: '88%'},
+    // chartArea: {left: '10%', width: '88%'},
     hAxis: {
       format: '####',
       direction: -1,
@@ -202,10 +182,10 @@ function drawStackedChart() {
     }
   };
   var options2 = {
-    title: 'Percentage of renewable energy produced to total electrical consumption in Florida',
+    title: 'Percentage of renewable energy produced to total energy consumption in Florida',
     height: 300,
     legend: {position: 'bottom', maxLines: 4},
-    chartArea: {left: '10%', width: '88%'},
+    // chartArea: {left: '10%', width: '88%'},
     hAxis: {
       format: '####',
       direction: -1,
@@ -240,7 +220,6 @@ function chartView() {
   let dog = document.getElementById("CombinedChart");
   let cat = document.getElementById("CombinedChartHeader");
   let horse = document.getElementById("RelativePercent");
-  RelativePercent
   if (document.getElementById("chart-trigger").checked == true) {
     dog.style.display = "block"
     cat.style.display = "block"
@@ -252,6 +231,7 @@ function chartView() {
     cat.style.display = "none"
     horse.style.display = 'none'
     document.getElementById('CombinedChart').innerHTML = "";
+    document.getElementById('RelativePercent').innerHTML = "";
     showCombined = 'false';
   }
 }

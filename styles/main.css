@@ -225,6 +225,10 @@ div, header, main, nav, section {
     width: 50%;
     height: auto; } }
 @media screen and (max-width: 970px) {
+  .column50 {
+    width: 100%;
+    height: auto; }
+
   .navbarRight {
     display: none; }
 
@@ -239,7 +243,7 @@ div, header, main, nav, section {
     display: flex; } }
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 725px) {
-  .column, .column33, .column50, .address, .map-directions, .getDirections {
+  .column, .column33, .address, .map-directions, .getDirections {
     width: 100%;
     height: auto; }
 
