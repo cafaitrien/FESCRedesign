@@ -20,7 +20,7 @@ Overall, the website has a lot of information, but is very frustrating to use.  
 ### Accessibility Audit
 The web is fundamentally designed to work for people, whatever their hardware, software, language, location, or ability. Web accessibility means that websites, tools, and technologies are designed and developed so that **everyone** can use them. [Source W3C](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
 
-####Evaluation Tools
+#### Evaluation Tools
 Website Accessibility Evaluation Tool is a tool to help web developers make their web content more accessible. Applying WAVE tool to the FESC site uncovered the following issues [full report](http://wave.webaim.org/report#/http://floridaenergy.ufl.edu/) the following observations.
 
 Style Issue Type | Why It Matters | How to Fix It
@@ -52,9 +52,33 @@ The tool [SortSite by PowerMapper](https://www.powermapper.com/products/sortsite
 * Various pages have markup errors, which cause screen readers to miss content.
 
 ### Mobile Friendliness
-[Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) was used to test the mobile friendliness of the website. The test provides information on how a visitor to a given webpage will view the page on a mobile device and revealed that the current site is **not** mobile friendly.
+[Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) was used to test the mobile friendliness of the website. The test provides information on how a visitor to a given webpage will view the page on a mobile device and revealed that the current site is **not** mobile friendly. Specifically, the test suggested fixing the following issues:
+
+* Text too small to read
+* Clickable elements too close together
+* Content wider than screen
+* Viewport not set
+
 ![Google Mobile Friendly Test](SiteEvaluation/GoogleMobileFriendlyTest.png)
+
+[Responsinator](http://www.responsinator.com/?url=floridaenergy.ufl.edu%2F) provides an illustration of what the website looks like on various devices, which again shows that the current website is **not** mobile friendly.
+
 ### Performance
+[Peter Drucker](https://blog.appdynamics.com/product/what-is-normal-application-performance/) once said
+>"If you can't measure it, you can't manage it.”
+
+Understanding the performance of a website provides insight into how the user will experience a website or if the website is operating within normal operating parameters.
+
+[Pingdom Website Speed Test](https://tools.pingdom.com/#!/dnvV0i/http://floridaenergy.ufl.edu/) allows one to test the website from various locations around the world and testing from San Jose gave the website a performance grade of a C - while testing from the other locations yielded a B. The main page of the website took 4.13 seconds to load.
+
+[GTMetrix](https://gtmetrix.com/reports/floridaenergy.ufl.edu/z3UGGmsR), when tested from Vancouver, Canada, yielded a D grade.  The page took 2.8 seconds to load.
+
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&tab=mobile) by Google yielded a medium optimization for Mobile (64/100) and a low optimization for Desktop (59/100).
+
+#### SEO Optimization
+[Varvy SEO Tool](https://varvy.com/) [SortSide](SiteEvaluation/Report_PowerMapper.pdf)
+
+
 
 ### Functionality
 ### Markup validation
@@ -82,3 +106,7 @@ $(window).resize(function() {
   drawEnergyProductionChart();
 });
 ```
+
+## Notes
+* See ResearchScripts.js for a demonstrated use of a callback function.
+* [A good resource](https://www.dyn-web.com/javascript/arrays/value-vs-reference.php) for understanding how arrays are handled in JavaScript. Key takeaway - arrays are reference types in JavaScript.
