@@ -12,7 +12,6 @@ let requestUrl1 = "https://api.eia.gov/series/?api_key=2a4b1f1449829c4fe7ec230d3
 let dataEnergyObtained = 'false';
 let dataTotalObtained = 'false';
 let showCombined = 'false';
-let percentCalculated = 'false';
 
 function onDOMLoad() {
   google.charts.load('current', {
@@ -109,7 +108,7 @@ function drawEnergyProductionChart() {
       format: '####',
       direction: -1,
       slantedText: false,
-      showTextEvery: 5
+      showTextEvery: 10
     },
     vAxis: {
       title: 'Billion Btu',
@@ -162,7 +161,7 @@ function drawStackedChart() {
     // TODO: find a good color contrast that maintains theme of site
     // backgroundColor: '#cdc092',
     // colors: ['darkorange'],
-    title: 'Combined/stacked graph',
+    title: 'Total energy consumption and renewable energy production in Florida',
     isStacked: false,
     height: 300,
     legend: {position: 'bottom', maxLines: 3},
