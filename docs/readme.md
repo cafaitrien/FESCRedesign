@@ -120,7 +120,7 @@ Overall the website is functional (i.e., it loads and works), but portions of it
 - clicking upon the Energy Certificate - UF Edge Program results in a page not found message
 - clicking upon the Heating Fuel Comparison [Calculator](http://floridaenergy.ufl.edu/public-outreach/) takes the user to US Energy Information Administration FAQ page.
 
-### Markup validation
+#### Markup validation
 According to [W3C's HTML validator](https://validator.w3.org/check?uri=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&charset=%28detect+automatically%29&doctype=Inline&group=0), FESC page has 34 errors and 25 warnings.  
 
 The [CSS validator by W3C](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) found 1 error and 15 warnings in the css for the home page.
@@ -134,6 +134,9 @@ The dual hierarchical navigation links are confusing as to with which the user i
 
 ### Site content freshness
 Overall, the content on the site is stale and needs to be refreshed.  The last site update was in 2017. The last update on social media sites [Twitter](https://twitter.com/FESC_UF) and [Facebook](https://www.facebook.com/FLEnergySC/) were respectively on 17 March 2016 and 08 March 2016.
+
+### Device Support Necessary
+The website should be device agnostic and user's should be able to access the website using a variety of mobile devices, tablets and computers.  If the device can run modern popular/mainstream browsers, then the website should be able to render on it. Currently, the website only appears to render properly in desktop mode.
 
 ### Recommendations for Improvement
 1.  Redesign website navigation to use a single hierarchical top level navigation menu bar.  The menu bar should be responsive and collapse down to a hamburger menu for mobile phones.
