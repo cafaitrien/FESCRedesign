@@ -62,7 +62,7 @@ The tool [SortSite by PowerMapper](https://www.powermapper.com/products/sortsite
 ![Google Mobile Friendly Test](SiteEvaluation/GoogleMobileFriendlyTest.png)
 
 [Responsinator](http://www.responsinator.com/?url=floridaenergy.ufl.edu%2F) provides an illustration of what the website looks like on various devices, which again shows that the current website is **not** mobile friendly.
-
+![Image of responsinator results](SiteEvaluation/responsinator.png)
 ### Performance
 [Peter Drucker](https://blog.appdynamics.com/product/what-is-normal-application-performance/) once said
 >"If you can't measure it, you can't manage it.”
@@ -76,24 +76,26 @@ Understanding the performance of a website provides insight into how the user wi
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&tab=mobile) by Google yielded a medium optimization for Mobile (64/100) and a low optimization for Desktop (59/100).
 
 #### SEO Optimization
+
 [Varvy SEO Tool](https://varvy.com/) The [report](SiteEvaluation/VarvySEOtoolandoptimizationguide.pdf) yielded the following observations:
 - The page may not display well on mobile devices due to:
- - Font size is small
- - Viewport not configured
- - Tap targets are small
- - Content does not fit viewport
-- Page does not default to HTTPS for all traffic
+  - Font size is small
+  - Viewport not configured
+  - Tap targets are small
+  - Content does not fit viewport
+-  Page does not default to HTTPS for all traffic
 - Accessibility issue found. Not screen reader friendly.
- - No skip to main content link
- - Alt text missing
- - Empty alt links
+  - No skip to main content link
+  - Alt text missing
+  - Empty alt links
 - Page speed issues found
- - Browser caching issues
- - Render blocking CSS and/or JavaScript
- - Compression not enabled
- - HTML, CSS, and JavaScript are not minimized
- - Images not optimized
- - Slow server response
+  - Browser caching issues
+  - Render blocking CSS and/or JavaScript
+  - Compression not enabled
+  - HTML, CSS, and JavaScript are not minimized
+  - Images not optimized
+  - Slow server response
+![Image of Varvy Results](SiteEvaluation/Varvy.png)
 
 [Neil Patel](http://tools.neilpatel.com/en/analyze/http%3A%2F%2Ffloridaenergy.ufl.edu%2F#!/) gives the page level SEO analysis page score of 74 and a load time analysis of 3.58 seconds. Page level speed recommendations include:
 * Look to combine all scripts into a single script, and similarly combining all CSS into a single stylesheet. This is the key to faster pages.
@@ -112,14 +114,37 @@ Understanding the performance of a website provides insight into how the user wi
   - optimize the website for speed - such as by following the recommendations in Google's Page Insights results.
 
 ### Functionality
+Overall the website is functional (i.e., it loads and works), but portions of it are non-functional.  For instance:
+- clicking upon the download brochure link on the homepage results in a document not found error.
+- clicking upon the LinkedIn icon points the user to a enlarged icon as opposed to the desired LinkedIn website.
+- clicking upon the Energy Certificate - UF Edge Program results in a page not found message
+- clicking upon the Heating Fuel Comparison [Calculator](http://floridaenergy.ufl.edu/public-outreach/) takes the user to US Energy Information Administration FAQ page.
+
 ### Markup validation
 According to [W3C's HTML validator](https://validator.w3.org/check?uri=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&charset=%28detect+automatically%29&doctype=Inline&group=0), FESC page has 34 errors and 25 warnings.  
 
 The [CSS validator by W3C](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) found 1 error and 15 warnings in the css for the home page.
 
+### Ease of Use
+Ease of Use relates to how easily a user is able to navigate a given website (ie, does a user find the information they seek to find where they expect to find it).
+
+Plainly stated the current website is an information dump with information scattered about the different pages of the site with an uncertain logical organization to the navigational links. For instance, a user looking for information on Zero Energy Demo Homes would have to navigate to Contact Us and then scroll down on the side navigation until finding the link.
+
+The dual hierarchical navigation links are confusing as to with which the user is supposed to primarily interact.  For instance, the user can click Contact us on both navigational bars as well as in the footer. In testing the site, I didn't find a consistent design principal in how the various pages were linked - which made the site not very easy to use.
+
+### Site content freshness
+Overall, the content on the site is stale and needs to be refreshed.  The last site update was in 2017. The last update on social media sites [Twitter](https://twitter.com/FESC_UF) and [Facebook](https://www.facebook.com/FLEnergySC/) were respectively on 17 March 2016 and 08 March 2016.
 
 ### Recommendations for Improvement
-
+1.  Redesign website navigation to use a single hierarchical top level navigation menu bar.  The menu bar should be responsive and collapse down to a hamburger menu for mobile phones.
+2.  Fix broken links on the webpage
+3.  Fix all html and css errors
+4.  Improve site accessibility, such as by adding alt tags to images and improving site contrast
+5.  Embed a map into contact info so that the user can easily see where Grinter Hall is located.
+6.  Improve mobile friendliness, such as by setting the viewport and making the content responsive
+7.  Improve SEO optimization, such as by adding meta description information, using consistent keywords and setting a preferred domain in Google Search Console
+8.  Optimize website to increase page loading speed, such as by eliminating render-blocking, leveraging browser caching and properly formatting and compressing images.
+9.  Restructure data so that the user finds the information where they would expect to find it - such as all FESC research under the research banner - as well as their expertise, etc.
 
 ## Google Charts
 
