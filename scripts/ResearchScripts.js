@@ -150,13 +150,16 @@ function drawEnergyProductionChart() {
   }
 }
 
+function computePercentageData(Cdata, Edata) {
+  let pData = Edata;
+  for (let i = 0; i < Edata.length; i++) {
+    pData[i][1] = 100*(Edata[i][1]/Cdata[i][1]);
+  }
+  return pData;
+}
 function drawStackedChart() {
-
     if (percentCalculated==='false'){
-      relativePercentData = energyData;
-      for (let i = 0; i < energyData.length; i++) {
-        relativePercentData[i][1] = 100*(energyData[i][1]/consumptionData[i][1]);
-      }
+      relativePercentData = computePercentageData(consumptionData, energyData);
       percentCalculated = 'true';
     }
 
@@ -236,14 +239,18 @@ $(window).resize(function() {
 function chartView() {
   let dog = document.getElementById("CombinedChart");
   let cat = document.getElementById("CombinedChartHeader");
+  let horse = document.getElementById("RelativePercent");
+  RelativePercent
   if (document.getElementById("chart-trigger").checked == true) {
     dog.style.display = "block"
     cat.style.display = "block"
+    horse.style.display = "block"
     drawStackedChart();
     showCombined = 'true';
   } else {
     dog.style.display = "none"
     cat.style.display = "none"
+    horse.style.display = 'none'
     document.getElementById('CombinedChart').innerHTML = "";
     showCombined = 'false';
   }
