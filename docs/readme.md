@@ -9,7 +9,7 @@ The primary objective of the redesign is to make the website more user friendly 
 
 ## State of the Current Website
 ### Ease of Use
-The website uses two different navigation bars to direct you throughout the website. A top horizontal navigation bar directs you to a specific search area (e.g., Home, FESC Research, etc), while a vertical navigation bar on the right provides information related to the topic selected with the horizontal navigation bar. This style of navigation construction is confusing and not intuitive to the end user. For instance, as illustrated above, the user can click contact us in the upper righthand corner or the lower lefthand corner.  
+The website uses two different navigation bars to direct you throughout the website. A top horizontal navigation bar directs you to a specific search area (e.g., Home, FESC Research, etc), while a vertical navigation bar on the right provides information related to the topic selected with the horizontal navigation bar. This style of navigation construction is confusing and not intuitive to the end user. For instance, as illustrated above, the user can click contact us in the upper righthand corner or the lower left hand corner.  
 
 The content of the website itself, while informative is old and appears to be an “information dump” as opposed to a repository of information designed to educate the end user of the website. For instance, under Solar, it would be helpful to first give a high level overview of solar power and then discuss current research projects – as opposed to jumping straight into completed research projects. The search bar at the top, while potentially useful needs a modern update, so that when you search, e.g., “David Norton”, the top entry is the contact card for David Norton, Interim Director and not an entry related to the 2017 FESC/Polytech conference.  
 
@@ -65,8 +65,12 @@ The tool [SortSite by PowerMapper](https://www.powermapper.com/products/sortsite
 ![Image of responsinator results](SiteEvaluation/responsinator.png)
 
 [Website Grader](https://website.grader.com/results/floridaenergy.ufl.edu) gives the site a 0/10 for both mobile friendliness and security.
+
 ![Image of Website Grader Score](SiteEvaluation/WebsiteGrader_Score.png)
+
+Website Grader suggests the following 7 actionable items:
 ![Image of Website Grader What to do](SiteEvaluation/WebsiteGrader_next.png)
+
 ### Performance
 [Peter Drucker](https://blog.appdynamics.com/product/what-is-normal-application-performance/) once said
 >"If you can't measure it, you can't manage it.”
@@ -149,9 +153,10 @@ The website should be device agnostic and user's should be able to access the we
 4.  Improve site accessibility, such as by adding alt tags to images and improving site contrast
 5.  Embed a map into contact info so that the user can easily see where Grinter Hall is located.
 6.  Improve mobile friendliness, such as by setting the viewport and making the content responsive
-7.  Improve SEO optimization, such as by adding meta description information, using consistent keywords and setting a preferred domain in Google Search Console
-8.  Optimize website to increase page loading speed, such as by eliminating render-blocking, leveraging browser caching and properly formatting and compressing images.
+7.  Improve SEO optimization, such as by adding meta description information, publishing a site map, using consistent keywords and setting a preferred domain in Google Search Console
+8.  Optimize website to increase page loading speed, such as by eliminating render-blocking, reducing page requests, leveraging browser caching and properly formatting and compressing images.
 9.  Restructure data so that the user finds the information where they would expect to find it - such as all FESC research under the research banner - as well as their expertise, etc.
+10. Potentially purchase an SSL certificate for the website.
 
 ## Google Charts
 
