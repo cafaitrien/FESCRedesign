@@ -63,6 +63,10 @@ The tool [SortSite by PowerMapper](https://www.powermapper.com/products/sortsite
 
 [Responsinator](http://www.responsinator.com/?url=floridaenergy.ufl.edu%2F) provides an illustration of what the website looks like on various devices, which again shows that the current website is **not** mobile friendly.
 ![Image of responsinator results](SiteEvaluation/responsinator.png)
+
+[Website Grader](https://website.grader.com/results/floridaenergy.ufl.edu) gives the site a 0/10 for both mobile friendliness and security.
+![Image of Website Grader Score](SiteEvaluation/WebsiteGrader_Score.png)
+![Image of Website Grader What to do](SiteEvaluation/WebsiteGrader_next.png)
 ### Performance
 [Peter Drucker](https://blog.appdynamics.com/product/what-is-normal-application-performance/) once said
 >"If you can't measure it, you can't manage it.”
