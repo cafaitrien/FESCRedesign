@@ -71,14 +71,45 @@ Understanding the performance of a website provides insight into how the user wi
 
 [Pingdom Website Speed Test](https://tools.pingdom.com/#!/dnvV0i/http://floridaenergy.ufl.edu/) allows one to test the website from various locations around the world and testing from San Jose gave the website a performance grade of a C - while testing from the other locations yielded a B. The main page of the website took 4.13 seconds to load.
 
-[GTMetrix](https://gtmetrix.com/reports/floridaenergy.ufl.edu/z3UGGmsR), when tested from Vancouver, Canada, yielded a D grade.  The page took 2.8 seconds to load.
+[GTMetrix](https://gtmetrix.com/reports/floridaenergy.ufl.edu/z3UGGmsR), when tested from Vancouver, Canada, yielded a D grade. The page took 2.8 seconds to load.
 
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&tab=mobile) by Google yielded a medium optimization for Mobile (64/100) and a low optimization for Desktop (59/100).
 
 #### SEO Optimization
-[Varvy SEO Tool](https://varvy.com/) [SortSide](SiteEvaluation/Report_PowerMapper.pdf)
+[Varvy SEO Tool](https://varvy.com/) The [report](SiteEvaluation/VarvySEOtoolandoptimizationguide.pdf) yielded the following observations:
+- The page may not display well on mobile devices due to:
+ - Font size is small
+ - Viewport not configured
+ - Tap targets are small
+ - Content does not fit viewport
+- Page does not default to HTTPS for all traffic
+- Accessibility issue found. Not screen reader friendly.
+ - No skip to main content link
+ - Alt text missing
+ - Empty alt links
+- Page speed issues found
+ - Browser caching issues
+ - Render blocking CSS and/or JavaScript
+ - Compression not enabled
+ - HTML, CSS, and JavaScript are not minimized
+ - Images not optimized
+ - Slow server response
 
+[Neil Patel](http://tools.neilpatel.com/en/analyze/http%3A%2F%2Ffloridaenergy.ufl.edu%2F#!/) gives the page level SEO analysis page score of 74 and a load time analysis of 3.58 seconds. Page level speed recommendations include:
+* Look to combine all scripts into a single script, and similarly combining all CSS into a single stylesheet. This is the key to faster pages.
+* Minify JavaScript and CSS. Minification is the practice of removing unnecessary characters from code to reduce its size thereby improving load times
 
+[Woorank](https://www.woorank.com/en/www/floridaenergy.ufl.edu) gives the website a score of 43/100. Specific improvements suggested by Woorank include:
+- using html header tags to differentiate between headings, subheadings and the rest of the content of the page.
+- adding meta description information to influence how the web pages are described and displayed in search results.
+- use consistent keywords to help crawlers index the site and determine relevancy to search queries.
+- set a preferred domain in Google Search Console and use a 301 redirect to divert traffic from www.floridaenergy.ufl.edu to floridaenergy.ufl.edu.
+- add an xml sitemap
+- increase mobile friendliness such as by:
+  - improving touchscreen readiness by increasing the size and width of targets on the webpage.
+  - increasing the font size on the website
+  - specify a viewport
+  - optimize the website for speed - such as by following the recommendations in Google's Page Insights results.
 
 ### Functionality
 ### Markup validation
